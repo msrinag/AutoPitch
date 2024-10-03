@@ -15,4 +15,4 @@ jobs:
     - name: Deploy to Streamlit
       uses: streamlit/action-deploy@v1
       env:
-        STREAMLIT_API_KEY: ${{ secrets.STREAMLIT_API_KEY }}  # Inject the secret
+        STREAMLIT_API_KEY: ${{ secrets.GOOGLE_API_KEY }}  # Inject the secret
