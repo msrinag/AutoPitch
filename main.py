@@ -1,6 +1,6 @@
 import streamlit as st
 from langchain_community.document_loaders import WebBaseLoader
-
+import os
 from Chains import Chain
 from portfolio import Portfolio
 from utils import clean_text
@@ -8,9 +8,10 @@ from utils import clean_text
 
 def create_streamlit_app(llm, portfolio, clean_text):
     st.title("📧 Cold Mail Generator")
+    st.write(os.environ["GOOGLE_API_KEY"] )
     url_input = st.text_input("Enter a URL:", value="https://jobs.nike.com/job/R-38703")
     submit_button = st.button("Submit")
-
+    
     if submit_button:
         try:
             loader = WebBaseLoader([url_input])
