@@ -20,13 +20,9 @@ def create_streamlit_app(llm, portfolio, clean_text):
             portfolio.load_portfolio()
             jobs = llm.extract_jobs(data)
             for job in jobs:
-                st.write("job")
                 skills = ', '.join(job.get('skills', []))
-                st.write("skill")
                 links = portfolio.query_links(skills)
-                st.write("portfolio")
                 email = llm.write_mail(job, links)
-                st.write("mail")
                 st.code(email, language='markdown')
         except Exception as e:
             st.error(f"An Error Occurred: {e}")
