@@ -31,6 +31,9 @@ Our project is hosted on: [AutoPitch](https://autopitch.streamlit.app/)
 4. **Email Generation**: An AI-generated cold email is created based on your input and matched portfolio items.
 5. **Customization**: You can tailor the sender’s name, role, and organization description to match your preferences.
 
+## Workflow
+![Workflow Diagram](assets/workflow.webp)
+
 ## Tech Stack
 
 - **LangChain**: Used for orchestrating the job extraction and email generation pipeline.
