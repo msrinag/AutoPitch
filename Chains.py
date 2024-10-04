@@ -53,7 +53,7 @@ class Chain:
             Remember you are Mohan, BDE at AtliQ. 
             Do not provide a preamble.
             ### EMAIL (NO PREAMBLE):  
-            ### IN THE RESPONSE MAKE SURE TO ONLY HAVE LINKS NO OTHER GRABAGE TEXT
+            ### WHILE MENTIOING PORTFOLIO LINK JUST THE LINK ITSELF IS ENOUGH DONT ADD TEXT FOR IT JUST INTRODUCE AND MENTION LINK
             """
         )
         chain_email = prompt_email | self.llm
