@@ -49,7 +49,7 @@ class Chain:
         process optimization, cost reduction, and heightened overall efficiency. 
         Your job is to write a cold email to the client regarding the job mentioned above describing the capability of {organization} 
         in fulfilling their needs.
-        Also add the most relevant ones from the following links to showcase {organization}'s portfolio: {{link_list}}
+        Also add the most relevant ones from the following links to showcase {organization}'s portfolio: {link_list}
         Remember you are {name}, {role} at {organization}.
         Do not provide a preamble.
         ### EMAIL (NO PREAMBLE):  
