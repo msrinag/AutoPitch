@@ -61,4 +61,5 @@ class Chain:
         return res.content
 
 if __name__ == "__main__":
+    print("api")
     print(os.getenv("GOOGLE_API_KEY"))
