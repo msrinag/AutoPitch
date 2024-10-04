@@ -4,3 +4,6 @@ uuid
 langchain-community
 langchain-google-genai
 langchain-core
+beautifulsoup4
+SQLite3
+pysqlite
