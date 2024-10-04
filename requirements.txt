@@ -1,8 +1,7 @@
 pandas
-chromadb
+chromadb==0.5.0
 uuid
 langchain-community
 langchain-google-genai
 langchain-core
 beautifulsoup4
-sqlite3==3.35.0
