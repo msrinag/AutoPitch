@@ -52,8 +52,7 @@ class Chain:
             Also add the most relevant ones from the following links to showcase Atliq's portfolio: {link_list}
             Remember you are Mohan, BDE at AtliQ. 
             Do not provide a preamble.
-            ### EMAIL (NO PREAMBLE):
-            ### WHILE MENTIOING PORTFOLIO LINK JUST THE LINK ITSELF IS ENOUGH DONT ADD TEXT FOR IT JUST INTRODUCE AND MENTION LINK  
+            ### EMAIL (NO PREAMBLE):  
             """
         )
         chain_email = prompt_email | self.llm
