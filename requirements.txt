@@ -1,5 +1,4 @@
 pandas
-langchain-vectorstores
 langchain-chroma
 uuid
 langchain-community
