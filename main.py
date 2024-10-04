@@ -1,12 +1,13 @@
 import streamlit as st
 from langchain_community.document_loaders import WebBaseLoader
 import os
-from Chains import Chain
-from portfolio import Portfolio
-from utils import clean_text
 import sqlite3
 st.write(sqlite3.sqlite_version)
 print(sqlite3.sqlite_version)
+from Chains import Chain
+from portfolio import Portfolio
+from utils import clean_text
+
 
 
 def create_streamlit_app(llm, portfolio, clean_text):
