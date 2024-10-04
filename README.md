@@ -1,8 +1,8 @@
-# 📧 Cold Email Generator
+# AutoPitch AKA 📧 Cold Email Generator
 
 ## Overview
 
-The Cold Email Generator is a tool designed to help **managers and executives from consultancy firms**. When these professionals come across job postings, they can use this tool to scan job descriptions and relate them to their portfolios. The tool is built with **LangChain** and integrates **Google Gemini Pro 1.5** for generating AI-powered cold emails. 
+AutoPitch is a tool designed to help **managers and executives from consultancy firms**. When these professionals come across job postings, they can use this tool to scan job descriptions and relate them to their portfolios. The tool is built with **LangChain** and integrates **Google Gemini Pro 1.5** for generating AI-powered cold emails. 
 
 By leveraging a vector space model to match the skills required for jobs with relevant projects from a portfolio, this tool generates tailored cold emails that highlight the organization's capabilities. Additionally, it allows for customization of the sender's name, role, and organization details, making it highly versatile for different users and job postings.
 
