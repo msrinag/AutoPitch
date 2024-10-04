@@ -36,26 +36,26 @@ class Chain:
             raise OutputParserException("Context too big. Unable to parse jobs.")
         return res if isinstance(res, list) else [res]
 
-    def write_mail(self, job, links):
+    def write_mail(self, job, links,name="Mohan", role="business development executive",
+               organization="AtliQ", organization_description):
         prompt_email = PromptTemplate.from_template(
             """
-            ### JOB DESCRIPTION:
-            {job_description}
+             ### JOB DESCRIPTION:
+        {{job_description}}
 
-            ### INSTRUCTION:
-            You are Mohan, a business development executive at AtliQ. AtliQ is an AI & Software Consulting company dedicated to facilitating
-            the seamless integration of business processes through automated tools. 
-            Over our experience, we have empowered numerous enterprises with tailored solutions, fostering scalability, 
-            process optimization, cost reduction, and heightened overall efficiency. 
-            Your job is to write a cold email to the client regarding the job mentioned above describing the capability of AtliQ 
-            in fulfilling their needs.
-            Also add the most relevant ones from the following links to showcase Atliq's portfolio: {link_list}
-            Remember you are Mohan, BDE at AtliQ. 
-            Do not provide a preamble.
-            ### EMAIL (NO PREAMBLE):  
-            ### WHILE MENTIOING PORTFOLIO LINK JUST THE LINK ITSELF IS ENOUGH DONT ADD TEXT FOR IT JUST INTRODUCE AND MENTION LINK
-            """
-        )
+        ### INSTRUCTION:
+        You are {name}, a {role} at {organization}. {organization} is {organization_description}. 
+        Over our experience, we have empowered numerous enterprises with tailored solutions, fostering scalability, 
+        process optimization, cost reduction, and heightened overall efficiency. 
+        Your job is to write a cold email to the client regarding the job mentioned above describing the capability of {organization} 
+        in fulfilling their needs.
+        Also add the most relevant ones from the following links to showcase {organization}'s portfolio: {{link_list}}
+        Remember you are {name}, {role} at {organization}.
+        Do not provide a preamble.
+        ### EMAIL (NO PREAMBLE):  
+        ### WHILE MENTIOING PORTFOLIO LINK JUST THE LINK ITSELF IS ENOUGH DONT ADD TEXT FOR IT JUST INTRODUCE AND MENTION LINK
+        """)
+                   
         chain_email = prompt_email | self.llm
         res = chain_email.invoke({"job_description": str(job), "link_list": links})
         return res.content
