@@ -1,5 +1,6 @@
 pandas
-chromadb==0.5.0
+langchain-vectorstores
+langchain-chroma
 uuid
 langchain-community
 langchain-google-genai
