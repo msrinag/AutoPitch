@@ -24,7 +24,7 @@ class Portfolio:
     def query_links(self, skills):
         # Vectorize the query
         skill_vector = self.vectorizer.transform([skills]).toarray()
-        D, I = self.index.search(skill_vector, 2)  # Search for top 2 results
+        D, I = self.index.search(skill_vector, 3)  # Search for top 2 results
         results = []
         for idx in I[0]:
             if idx != -1:  # Ignore invalid results
