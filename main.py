@@ -11,7 +11,6 @@ from utils import clean_text
 
 
 def create_streamlit_app(llm, portfolio, clean_text):
-    st.set_page_config(page_title="AutoPitch", page_icon="🤖")
     st.title("📧 Cold Mail Generator")
     st.write(os.environ["GOOGLE_API_KEY"] )
     url_input = st.text_input("Enter a URL:", value="https://jobs.nike.com/job/R-38703")
