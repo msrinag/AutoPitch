@@ -6,6 +6,7 @@ from portfolio import Portfolio
 from utils import clean_text
 import sqlite3
 st.write(sqlite3.sqlite_version)
+print(sqlite3.sqlite_version)
 
 
 def create_streamlit_app(llm, portfolio, clean_text):
