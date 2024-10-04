@@ -5,5 +5,3 @@ langchain-community
 langchain-google-genai
 langchain-core
 beautifulsoup4
-pysqlite
-wheel
