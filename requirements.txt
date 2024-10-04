@@ -6,3 +6,4 @@ langchain-google-genai
 langchain-core
 beautifulsoup4
 pysqlite3-binary
+streamlit-chromadb-connection
