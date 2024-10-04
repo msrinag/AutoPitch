@@ -57,7 +57,14 @@ class Chain:
         """)
                    
         chain_email = prompt_email | self.llm
-        res = chain_email.invoke({"job_description": str(job), "link_list": links})
+        res = chain_email.invoke({
+        "job_description": str(job), 
+        "link_list": links, 
+        "name": name, 
+        "role": role, 
+        "organization": organization, 
+        "organization_description": organization_description
+    })
         return res.content
 
 if __name__ == "__main__":
