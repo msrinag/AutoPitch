@@ -10,6 +10,14 @@ from utils import clean_text
 
 def create_streamlit_app(llm, portfolio, clean_text):
     st.title("📧 Cold Mail Generator")
+    # User inputs for name, role, organization, and organization description
+    name = st.text_input("Enter your name:", value="Mohan")
+    role = st.text_input("Enter your role:", value="business development executive")
+    organization = st.text_input("Enter your organization:", value="AtliQ")
+    organization_description = st.text_area("Enter organization description:", 
+        value="an AI & Software Consulting company dedicated to facilitating the seamless integration of business processes through automated tools")
+
+    # URL input and submit button
     url_input = st.text_input("Enter a URL:", value="https://jobs.nike.com/job/R-40387")
     submit_button = st.button("Submit")
     
