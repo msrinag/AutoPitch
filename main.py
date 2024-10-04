@@ -37,8 +37,11 @@ def create_streamlit_app(llm, portfolio, clean_text):
 
 
 if __name__ == "__main__":
+    print("chain")
     chain = Chain()
+    print("cc")
     portfolio = Portfolio()
+    print("port")
     st.set_page_config(layout="wide", page_title="Cold Email Generator", page_icon="📧")
     create_streamlit_app(chain, portfolio, clean_text)
 
