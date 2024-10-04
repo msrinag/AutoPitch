@@ -1,9 +1,9 @@
 import streamlit as st
 from langchain_community.document_loaders import WebBaseLoader
 import os
-import sqlite3
-st.write(sqlite3.sqlite_version)
-print(sqlite3.sqlite_version)
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 from Chains import Chain
 from portfolio import Portfolio
 from utils import clean_text
