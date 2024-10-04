@@ -30,7 +30,7 @@ def create_streamlit_app(llm, portfolio, clean_text):
                 links = portfolio.query_links(skills)
                 print("portfolio")
                 email = llm.write_mail(job, links)
-                 print("mail")
+                print("mail")
                 st.code(email, language='markdown')
         except Exception as e:
             st.error(f"An Error Occurred: {e}")
