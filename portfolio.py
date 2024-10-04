@@ -1,22 +1,32 @@
 import pandas as pd
+import faiss
+import numpy as np
 import uuid
-import streamlit as st
-from streamlit_chromadb_connection.chromadb_connection import ChromadbConnection
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 class Portfolio:
     def __init__(self, file_path="my_portfolio.csv"):
         self.file_path = file_path
         self.data = pd.read_csv(file_path)
-        configuration = {"client": "PersistentClient", "path": "/tmp/.chroma"}
-        self.conn = st.connection("chromadb", type=ChromadbConnection, **configuration)
-        self.collection = self.conn.get_or_create_collection(name="portfolio")
+        self.vectorizer = TfidfVectorizer()
+        self.index = None
+        self.techstack_vectors = None
+        self.load_portfolio()
 
     def load_portfolio(self):
-        if not self.collection.count():
-            for _, row in self.data.iterrows():
-                self.collection.add(documents=row["Techstack"],
-                                    metadatas={"links": row["Links"]},
-                                    ids=[str(uuid.uuid4())])
+        techstack_text = self.data["Techstack"].tolist()
+        self.techstack_vectors = self.vectorizer.fit_transform(techstack_text).toarray()
+
+        # Build FAISS index
+        self.index = faiss.IndexFlatL2(self.techstack_vectors.shape[1])  # L2 distance metric
+        self.index.add(self.techstack_vectors)
 
     def query_links(self, skills):
-        return self.collection.query(query_texts=skills, n_results=2).get('metadatas', [])
+        # Vectorize the query
+        skill_vector = self.vectorizer.transform([skills]).toarray()
+        D, I = self.index.search(skill_vector, 2)  # Search for top 2 results
+        results = []
+        for idx in I[0]:
+            if idx != -1:  # Ignore invalid results
+                results.append({"links": self.data.iloc[idx]["Links"]})
+        return results
