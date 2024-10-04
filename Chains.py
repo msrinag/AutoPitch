@@ -41,7 +41,7 @@ class Chain:
         prompt_email = PromptTemplate.from_template(
             """
              ### JOB DESCRIPTION:
-        {{job_description}}
+        {job_description}
 
         ### INSTRUCTION:
         You are {name}, a {role} at {organization}. {organization} is {organization_description}. 
