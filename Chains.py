@@ -37,7 +37,7 @@ class Chain:
         return res if isinstance(res, list) else [res]
 
     def write_mail(self, job, links,name="Mohan", role="business development executive",
-               organization="AtliQ", organization_description):
+               organization="AtliQ", organization_description="an AI & Software Consulting company dedicated to facilitating the seamless integration of business processes through automated tools"):
         prompt_email = PromptTemplate.from_template(
             """
              ### JOB DESCRIPTION:
