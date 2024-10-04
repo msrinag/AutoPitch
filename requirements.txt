@@ -4,5 +4,9 @@ uuid
 langchain-community
 langchain-google-genai
 langchain-core
+<<<<<<< HEAD
 beautifulsoup4
 pysqlite3-binary
+=======
+
+>>>>>>> 056de87fd2c99d26ffcbae395992a778cd1fab6f
