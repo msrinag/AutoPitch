@@ -54,7 +54,8 @@ class Chain:
         Do not provide a preamble.
         ### EMAIL (NO PREAMBLE):  
         ### WHILE MENTIOING PORTFOLIO LINK JUST THE LINK ITSELF IS ENOUGH DONT ADD TEXT FOR IT JUST INTRODUCE AND MENTION LINK
-        """)
+        ###     Be confident introudce yourself tell few good things about organisation to build trust
+""")
                    
         chain_email = prompt_email | self.llm
         res = chain_email.invoke({
