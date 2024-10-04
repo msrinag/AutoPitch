@@ -10,7 +10,6 @@ from utils import clean_text
 
 def create_streamlit_app(llm, portfolio, clean_text):
     st.title("📧 Cold Mail Generator")
-    st.write(os.environ["GOOGLE_API_KEY"] )
     url_input = st.text_input("Enter a URL:", value="https://jobs.nike.com/job/R-38703")
     submit_button = st.button("Submit")
     
@@ -21,13 +20,13 @@ def create_streamlit_app(llm, portfolio, clean_text):
             portfolio.load_portfolio()
             jobs = llm.extract_jobs(data)
             for job in jobs:
-                print("job")
+                st.write("job")
                 skills = job.get('skills', [])
-                print("skill")
+                st.write("skill")
                 links = portfolio.query_links(skills)
-                print("portfolio")
+                st.write("portfolio")
                 email = llm.write_mail(job, links)
-                print("mail")
+                st.write("mail")
                 st.code(email, language='markdown')
         except Exception as e:
             st.error(f"An Error Occurred: {e}")
