@@ -1,6 +1,10 @@
 # 📧 AutoPitch 
 AKA  Cold Email Generator
 
+## Demo
+
+![Demo GIF](assets/AutoPitch_Demo.gif)
+
 ## Overview
 
 AutoPitch is a tool designed to help **managers and executives from consultancy firms**. When these professionals come across job postings, they can use this tool to scan job descriptions and relate them to their portfolios. The tool is built with **LangChain** and integrates **Google Gemini Pro 1.5** for generating AI-powered cold emails. 
@@ -9,10 +13,6 @@ By leveraging a vector space model to match the skills required for jobs with re
 
 ## Hosted Website
 Our project is hosted on: [AutoPitch](https://autopitch.streamlit.app/)
-
-## Demo
-
-![Demo GIF](assets/AutoPitch_Demo.gif)
 
 
 ## Features
