@@ -7,6 +7,8 @@ AutoPitch is a tool designed to help **managers and executives from consultancy 
 
 By leveraging a vector space model to match the skills required for jobs with relevant projects from a portfolio, this tool generates tailored cold emails that highlight the organization's capabilities. Additionally, it allows for customization of the sender's name, role, and organization details, making it highly versatile for different users and job postings.
 
+## Hosted Website
+Our project is hosted on: [AutoPitch](https://autopitch.streamlit.app/)
 
 ## Demo
 
