@@ -1,5 +1,5 @@
 # 📧 AutoPitch 
-      AKA  Cold Email Generator
+AKA  Cold Email Generator
 
 ## Overview
 
