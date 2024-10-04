@@ -1,5 +1,4 @@
 import pandas as pd
-import chromadb
 import uuid
 import streamlit as st
 from streamlit_chromadb_connection.chromadb_connection import ChromadbConnection
